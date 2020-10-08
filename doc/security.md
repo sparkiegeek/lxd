@@ -236,11 +236,11 @@ instance is using, or can be added to individual instances, as shown below.
 
 The following security features are available for `bridged` NICs:
 
-Key                      | Type      | Default           | Required  | Description
-:--                      | :--       | :--               | :--       | :--
-security.mac\_filtering  | boolean   | false             | no        | Prevent the instance from spoofing another's MAC address
-security.ipv4\_filtering | boolean   | false             | no        | Prevent the instance from spoofing another's IPv4 address (enables mac\_filtering)
-security.ipv6\_filtering | boolean   | false             | no        | Prevent the instance from spoofing another's IPv6 address (enables mac\_filtering)
+Key                     | Type      | Default           | Required  | Description
+:--                     | :--       | :--               | :--       | :--
+security.mac_filtering  | boolean   | false             | no        | Prevent the instance from spoofing another's MAC address
+security.ipv4_filtering | boolean   | false             | no        | Prevent the instance from spoofing another's IPv4 address (enables mac\_filtering)
+security.ipv6_filtering | boolean   | false             | no        | Prevent the instance from spoofing another's IPv6 address (enables mac\_filtering)
 
 One can override the default `bridged` NIC settings from the profile on a per-instance basis using:
 
@@ -258,13 +258,13 @@ different MAC address (i.e using bridged or macvlan NICs).
 The IP filtering features block ARP and NDP advertisements that contain a spoofed IP, as well as blocking any
 packets that contain a spoofed source address.
 
-If `security.ipv4\_filtering` or `security.ipv6\_filtering` is enabled and the instance cannot be allocated an IP
+If `security.ipv4_filtering` or `security.ipv6_filtering` is enabled and the instance cannot be allocated an IP
 address (because `ipvX.address=none` or there is no DHCP service enabled on the bridge) then all IP traffic for
 that protocol is blocked from the instance.
 
-When `security.ipv6\_filtering` is enabled IPv6 router advertisements are blocked from the instance.
+When `security.ipv6_filtering` is enabled IPv6 router advertisements are blocked from the instance.
 
-When `security.ipv4\_filtering` or `security.ipv6\_filtering` is enabled, any Ethernet frames that are not ARP,
+When `security.ipv4_filtering` or `security.ipv6_filtering` is enabled, any Ethernet frames that are not ARP,
 IPv4 or IPv6 are dropped. This prevents stacked VLAN QinQ (802.1ad) frames from bypassing the IP filtering.
 
 ### Routed NIC security
